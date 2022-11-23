@@ -20,7 +20,7 @@ app.use("/", indexRouter);
 
 app.use("/images", express.static("./images"));
 
-//No route found
+//No routes found
 app.use((req, res, next) => {
   const error = new Error("Page not found");
   error.statusCode = 404;
