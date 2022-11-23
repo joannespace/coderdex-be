@@ -12,7 +12,9 @@ const createData = async (limit) => {
           types: !poke.Type2
             ? [poke.Type1.toLowerCase()]
             : [poke.Type1.toLowerCase(), poke.Type2.toLowerCase()],
-          url: `http://localhost:8000/images/${index + 1}.png`,
+          url: `https://coder-dex-joannespace.herokuapp.com/images/${
+            index + 1
+          }.png`,
         };
       })
       .slice(0, limit);
