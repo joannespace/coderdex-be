@@ -32,7 +32,7 @@ router.get("/pokemons", function (req, res, next) {
     if (req.query.type) {
       result = data.filter((poke) => poke.types.includes(req.query.type));
     } else {
-      result = data;
+      result = result.length ? result : data;
     }
 
     //Search by name
