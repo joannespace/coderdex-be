@@ -70,9 +70,7 @@ router.get("/pokemons/:id", (req, res, next) => {
     result = {
       pokemon: data[pokeIndex],
       previousPokemon:
-        pokeIndex === data.length - 1
-          ? data[pokeIndex - 1]
-          : data[data.length - 1],
+        pokeIndex === 0 ? data[data.length - 1] : data[pokeIndex - 1],
       nextPokemon:
         pokeIndex === data.length - 1 ? data[0] : data[pokeIndex + 1],
     };
