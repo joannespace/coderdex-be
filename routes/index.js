@@ -84,7 +84,7 @@ router.get("/pokemons/:id", (req, res, next) => {
 });
 
 //POST A POKEMON
-router.post("/pokemons/:id", (req, res, next) => {
+router.post("/pokemons", (req, res, next) => {
   console.log(req.query, req.body);
   const jsonFile = JSON.parse(fs.readFileSync("./db.json", "utf-8"));
   let data = jsonFile.data;
@@ -166,7 +166,6 @@ router.post("/pokemons/:id", (req, res, next) => {
     data.forEach((item) => {
       if (
         item.id.toString() === validResult.id.toString() ||
-        item.id.toString() === req.params.toString() ||
         item.name === validResult.name.toLowerCase()
       ) {
         const error = new Error(
