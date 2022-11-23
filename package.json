@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "json-server --watch db.json --port 5000",
+    "start": "nodemon ./bin/www",
     "dev": "nodemon ./bin/www"
   },
   "dependencies": {

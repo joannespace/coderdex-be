@@ -18,6 +18,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 
+app.use("/images", express.static("./images"));
+
 //No route found
 app.use((req, res, next) => {
   const error = new Error("Page not found");

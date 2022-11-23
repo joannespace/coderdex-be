@@ -9,8 +9,10 @@ const createData = async (limit) => {
         return {
           id: index + 1,
           name: poke.Name,
-          types: poke.Type2 ? [poke.Type1, poke.Typ2] : [poke.Type1],
-          url: `/images/${index + 1}.png`,
+          types: !poke.Type2
+            ? [poke.Type1.toLowerCase()]
+            : [poke.Type1.toLowerCase(), poke.Type2.toLowerCase()],
+          url: `http://localhost:8000/images/${index + 1}.png`,
         };
       })
       .slice(0, limit);
